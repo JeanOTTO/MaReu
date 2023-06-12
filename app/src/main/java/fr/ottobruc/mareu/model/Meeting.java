@@ -10,13 +10,13 @@ public class Meeting {
     private Date startTime;
     private Date endTime;
     private Date date;
-    private String location;
+    private Room location;
     private String subject;
     private List<User> participants;
 
 
 
-    public Meeting(int id, Date startTime, Date endTime, Date date, String location, String subject, List<User> participants) {
+    public Meeting(int id, Date startTime, Date endTime, Date date, Room location, String subject, List<User> participants) {
         this.id = id;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -32,7 +32,7 @@ public class Meeting {
     public Date getDate() {
         return date;
     }
-    public String getLocation() {
+    public Room getLocation() {
         return location;
     }
     public String getSubject() {

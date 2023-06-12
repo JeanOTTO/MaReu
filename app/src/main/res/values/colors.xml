@@ -7,4 +7,15 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="colorAccent">#999999</color>
+    <color name="pastel_1">#FFB3BA</color>       <!-- Light Pink -->
+    <color name="pastel_2">#FFDFBA</color>       <!-- Peach -->
+    <color name="pastel_3">#FFFFBA</color>       <!-- Light Yellow -->
+    <color name="pastel_4">#Baffc9ba</color>     <!-- Mint -->
+    <color name="pastel_5">#BAE1FF</color>       <!-- Light Blue -->
+    <color name="pastel_6">#D8BAFF</color>       <!-- Lavender -->
+    <color name="pastel_7">#FFC6FF</color>       <!-- Pale Pink -->
+    <color name="pastel_8">#BAFFC3</color>       <!-- Light Green -->
+    <color name="pastel_9">#FFF9C3</color>       <!-- Pale Yellow -->
+    <color name="pastel_10">#E0C3FF</color>      <!-- Lilac -->
 </resources>
