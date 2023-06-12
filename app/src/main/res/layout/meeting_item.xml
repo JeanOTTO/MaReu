@@ -18,12 +18,13 @@
 
     <TextView
         android:id="@+id/subjectTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
         android:text="Sujet de la réunion"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/deleteButton"
         app:layout_constraintStart_toEndOf="@+id/colorIndicatorView"
         app:layout_constraintTop_toTopOf="@+id/colorIndicatorView" />
 
@@ -31,12 +32,16 @@
         android:id="@+id/participantsTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:text="Participants"
+        android:ellipsize="end"
+        android:singleLine="true"
         app:layout_constraintBottom_toBottomOf="@+id/colorIndicatorView"
-        app:layout_constraintStart_toStartOf="@+id/subjectTextView" />
+        app:layout_constraintEnd_toStartOf="@+id/deleteButton"
+        app:layout_constraintStart_toEndOf="@+id/colorIndicatorView" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/deleteButton"
         android:layout_width="30dp"
         android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="parent"

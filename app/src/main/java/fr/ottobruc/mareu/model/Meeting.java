@@ -38,8 +38,12 @@ public class Meeting {
     public String getSubject() {
         return subject;
     }
+    public Date getStartTime() {
+        return startTime;
+    }
     public List<User> getParticipants() {
         return participants;
     }
+
 
 }

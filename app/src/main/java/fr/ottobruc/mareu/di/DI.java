@@ -1,18 +1,12 @@
 package fr.ottobruc.mareu.di;
 
+import fr.ottobruc.mareu.repository.MeetingRepository;
 import fr.ottobruc.mareu.service.DummyMeetingApiService;
 import fr.ottobruc.mareu.service.MeetingApiService;
 
 public class DI {
-
-    private static MeetingApiService service = new DummyMeetingApiService();
-
-    /**
-     * Get an instance on @{@link MeetingApiService}
-     * @return
-     */
-    public static MeetingApiService getMeetingApiService() {
-        return service;
+    public static MeetingRepository createMeetingRepository() {
+        return new MeetingRepository(new DummyMeetingApiService());
     }
 
     /**

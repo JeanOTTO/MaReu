@@ -1,22 +1,25 @@
 package fr.ottobruc.mareu;
-
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
+import java.text.SimpleDateFormat;
 import java.util.List;
-
 import fr.ottobruc.mareu.databinding.MeetingItemBinding;
 import fr.ottobruc.mareu.model.Meeting;
 import fr.ottobruc.mareu.model.User;
 
 public class MeetingAdapter extends RecyclerView.Adapter<MeetingAdapter.MeetingViewHolder> {
     private List<Meeting> meetings;
+    private final Listener callback;
+    public interface Listener {
+        void onClickDelete(Meeting meeting);
+    }
 
-    public MeetingAdapter(List<Meeting> meetings) {
+    public MeetingAdapter(List<Meeting> meetings, Listener callback) {
         this.meetings = meetings;
+        this.callback = callback;
     }
 
     @NonNull
@@ -30,6 +33,14 @@ public class MeetingAdapter extends RecyclerView.Adapter<MeetingAdapter.MeetingV
     public void onBindViewHolder(@NonNull MeetingViewHolder holder, int position) {
         Meeting meeting = meetings.get(position);
         holder.bind(meeting);
+        holder.binding.deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (callback != null) {
+                    callback.onClickDelete(meeting);
+                }
+            }
+        });
     }
 
     @Override
@@ -46,9 +57,13 @@ public class MeetingAdapter extends RecyclerView.Adapter<MeetingAdapter.MeetingV
         }
 
         public void bind(Meeting meeting) {
+            // Affiche l'heure de la réunion
+            SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
+            String time = timeFormat.format(meeting.getStartTime());
+
             // Mettre à jour les vues avec les données de la réunion
             binding.colorIndicatorView.setColorFilter(meeting.getLocation().getColor());
-            binding.subjectTextView.setText(meeting.getSubject()+" - "+"Heure"+" - "+meeting.getLocation().getName());
+            binding.subjectTextView.setText(meeting.getSubject()+" - "+time+" - "+meeting.getLocation().getName());
 
 
 
